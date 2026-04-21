@@ -215,29 +215,6 @@ export default {
 };
 ```
 
-## 🐛 Troubleshooting
-
-### Port Already in Use
-
-Change port in `vite.config.js`:
-
-```javascript
-server: {
-  port: 3001,
-}
-```
-
-### API Connection Issues
-
-- Verify backend is running
-- Check `VITE_API_URL` in `.env.local`
-- Check browser console for errors
-
-### Styling Issues
-
-- Clear `node_modules` and reinstall: `npm ci`
-- Clear build cache: `rm -rf dist/`
-
 ## 📝 License
 
 ISC
