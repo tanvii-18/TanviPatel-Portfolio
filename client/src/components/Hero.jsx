@@ -106,8 +106,11 @@ const Hero = () => {
               {/* Profile image placeholder */}
               <div className="absolute inset-0 bg-gradient-to-br from-accent-purple/40 to-accent-pink/40 rounded-3xl border-2 border-accent-purple/30 backdrop-blur-sm flex items-center justify-center overflow-hidden">
                 <div className="text-center">
-                  <div className="text-6xl mb-2">👨‍💻</div>
-                  <p className="text-sm text-dark-text/60">Profile Image</p>
+                  <img
+                    src="./src/assets/pro.jpg"
+                    className="text-sm text-dark-text/60"
+                    alt=""
+                  />
                 </div>
               </div>
 
