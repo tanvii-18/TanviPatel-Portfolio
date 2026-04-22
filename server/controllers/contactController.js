@@ -1,5 +1,8 @@
 import Contact from "../models/Contact.js";
 import { sendEmail } from "../config/email.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // Validate email format
 const validateEmail = (email) => {
