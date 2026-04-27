@@ -5,15 +5,30 @@ export default {
     extend: {
       colors: {
         dark: {
-          bg: "#0a0e27",
-          card: "#1a1f3a",
-          text: "#e0e0ff",
+          bg: "var(--bg-primary)",
+          card: "var(--bg-card)",
+          text: "var(--text-primary)",
         },
         accent: {
-          purple: "#667eea",
-          pink: "#f093fb",
-          lavender: "#c084fc",
+          purple: "var(--accent-purple)",
+          pink: "var(--accent-pink)",
+          lavender: "var(--accent-lavender)",
         },
+        text: {
+          primary: "var(--text-primary)",
+          secondary: "var(--text-secondary)",
+          tertiary: "var(--text-tertiary)",
+        },
+        border: {
+          DEFAULT: "var(--border-color)",
+          light: "var(--border-light)",
+        },
+      },
+      backgroundColor: {
+        primary: "var(--bg-primary)",
+        secondary: "var(--bg-secondary)",
+        card: "var(--bg-card)",
+        input: "var(--bg-input)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -21,8 +36,12 @@ export default {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       boxShadow: {
-        "glow-purple": "0 0 20px rgba(102, 126, 234, 0.4)",
+        "glow-purple": "var(--shadow-glow)",
         "glow-pink": "0 0 20px rgba(240, 147, 251, 0.4)",
+        "shadow-sm": "var(--shadow-sm)",
+        "shadow-md": "var(--shadow-md)",
+        "shadow-lg": "var(--shadow-lg)",
+        "shadow-xl": "var(--shadow-xl)",
       },
       animation: {
         float: "float 6s ease-in-out infinite",

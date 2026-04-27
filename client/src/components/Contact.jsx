@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Github, Linkedin, Twitter, Send } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Github,
+  Linkedin,
+  Twitter,
+  Send,
+  ArrowRight,
+} from "lucide-react";
 import { ToastContainer, toast } from "react-toastify";
 import { submitContactForm } from "../utils/api";
 import "react-toastify/dist/ReactToastify.css";
@@ -49,20 +57,24 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { icon: <Github size={24} />, url: "https://github.com", label: "GitHub" },
+    {
+      icon: <Github size={24} />,
+      url: "https://github.com/tanvii-18",
+      label: "GitHub",
+    },
     {
       icon: <Linkedin size={24} />,
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/tanvi-patel18/",
       label: "LinkedIn",
     },
     {
       icon: <Twitter size={24} />,
-      url: "https://twitter.com",
+      url: "https://x.com/Tanvi_Patel18",
       label: "Twitter",
     },
     {
       icon: <Mail size={24} />,
-      url: "mailto:tanvi@example.com",
+      url: "mailto:tanvii.tech@gmail.com",
       label: "Email",
     },
   ];
@@ -87,90 +99,127 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 lg:py-32 relative overflow-hidden">
+      {/* Subtle background effects */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-accent-purple/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-accent-pink/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="space-y-16"
+          className="space-y-20"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
           {/* Heading */}
-          <motion.div className="text-center" variants={itemVariants}>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+          <motion.div className="text-center space-y-6" variants={itemVariants}>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
               Let's <span className="gradient-text">Connect</span>
             </h2>
-            <p className="text-lg text-dark-text/80">
-              Have a project in mind or just want to chat? Feel free to reach
-              out!
+            <p className="text-lg sm:text-xl text-dark-text/80 max-w-2xl mx-auto leading-relaxed">
+              Have a project in mind or just want to chat? I'd love to hear from
+              you. Get in touch and let's create something amazing together!
             </p>
-            <div className="w-20 h-1 bg-gradient-to-r from-accent-purple to-accent-pink mx-auto mt-4"></div>
+            <div className="flex gap-3 justify-center mt-6">
+              <div className="w-16 h-1 bg-gradient-to-r from-accent-purple to-transparent rounded-full"></div>
+              <div className="w-16 h-1 bg-gradient-to-r from-accent-pink to-transparent rounded-full"></div>
+            </div>
           </motion.div>
 
           {/* Contact Grid */}
           <motion.div
-            className="grid md:grid-cols-2 gap-12"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
             variants={containerVariants}
           >
             {/* Contact Info */}
-            <motion.div className="space-y-8" variants={itemVariants}>
-              <div>
-                <h3 className="text-2xl font-bold mb-6 text-accent-purple">
-                  Contact Info
+            <motion.div className="space-y-12" variants={itemVariants}>
+              <div className="space-y-3">
+                <h3 className="text-3xl font-bold bg-gradient-to-r from-accent-purple to-accent-pink bg-clip-text text-transparent">
+                  Get In Touch
                 </h3>
+                <p className="text-dark-text/70 leading-relaxed">
+                  Reach out through any of these channels or fill the contact
+                  form.
+                </p>
               </div>
 
               {/* Contact Items */}
               <div className="space-y-6">
+                {/* Email */}
                 <motion.a
-                  href="mailto:tanvi@example.com"
-                  whileHover={{ x: 10 }}
-                  className="flex gap-4 items-start group cursor-pointer"
+                  href="mailto:tanvii.tech@gmail.com"
+                  whileHover={{ x: 8 }}
+                  className="flex gap-5 items-start group cursor-pointer"
                 >
-                  <div className="p-3 bg-accent-purple/20 rounded-lg group-hover:bg-accent-purple/40 transition-colors">
-                    <Mail className="text-accent-purple" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-dark-text">Email</h4>
-                    <p className="text-dark-text/70 group-hover:text-accent-purple transition-colors">
-                      tanvi@example.com
+                  <motion.div
+                    className="p-4 bg-gradient-to-br from-accent-purple/20 to-accent-pink/10 rounded-xl border border-accent-purple/20 group-hover:border-accent-purple/50 transition-all duration-300 flex-shrink-0 flex items-center justify-center h-16 w-16 shadow-lg"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <Mail
+                      className="text-accent-purple group-hover:text-accent-pink transition-colors"
+                      size={28}
+                    />
+                  </motion.div>
+                  <div className="min-w-0 pt-2">
+                    <h4 className="text-sm font-semibold text-dark-text/60 uppercase tracking-wider mb-1">
+                      Email
+                    </h4>
+                    <p className="text-lg text-dark-text font-medium group-hover:text-accent-purple transition-colors break-all">
+                      tanvii.tech@gmail.com
                     </p>
                   </div>
                 </motion.a>
 
+                {/* Location */}
                 <motion.div
-                  whileHover={{ x: 10 }}
-                  className="flex gap-4 items-start group cursor-pointer"
+                  whileHover={{ x: 8 }}
+                  className="flex gap-5 items-start group cursor-pointer"
                 >
-                  <div className="p-3 bg-accent-purple/20 rounded-lg group-hover:bg-accent-purple/40 transition-colors">
-                    <MapPin className="text-accent-purple" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-dark-text">Location</h4>
-                    <p className="text-dark-text/70">India</p>
+                  <motion.div
+                    className="p-4 bg-gradient-to-br from-accent-pink/20 to-accent-purple/10 rounded-xl border border-accent-pink/20 group-hover:border-accent-pink/50 transition-all duration-300 flex-shrink-0 flex items-center justify-center h-16 w-16 shadow-lg"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <MapPin
+                      className="text-accent-pink group-hover:text-accent-purple transition-colors"
+                      size={28}
+                    />
+                  </motion.div>
+                  <div className="pt-2">
+                    <h4 className="text-sm font-semibold text-dark-text/60 uppercase tracking-wider mb-1">
+                      Location
+                    </h4>
+                    <p className="text-lg text-dark-text font-medium">India</p>
                   </div>
                 </motion.div>
               </div>
 
               {/* Social Links */}
-              <div>
-                <h4 className="font-semibold text-dark-text mb-4">
-                  Connect With Me
+              <div className="pt-8 border-t border-accent-purple/10">
+                <h4 className="text-sm font-semibold text-dark-text/60 uppercase tracking-wider mb-6">
+                  Follow Me
                 </h4>
-                <div className="flex gap-4">
+                <div className="flex gap-4 flex-wrap">
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={index}
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1, y: -5 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="p-3 bg-dark-card border border-accent-purple/20 rounded-lg text-accent-purple hover:border-accent-purple/50 hover:text-accent-pink transition-all glow-effect"
+                      whileHover={{ scale: 1.15, y: -8 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="p-3.5 bg-gradient-to-br from-dark-card to-dark-bg border border-accent-purple/30 rounded-xl text-accent-purple hover:border-accent-purple hover:text-accent-pink hover:shadow-lg hover:shadow-accent-purple/20 transition-all duration-300"
                       title={social.label}
                     >
-                      {social.icon}
+                      <motion.div
+                        animate={{ rotate: 0 }}
+                        whileHover={{ rotate: 15 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {social.icon}
+                      </motion.div>
                     </motion.a>
                   ))}
                 </div>
@@ -178,73 +227,109 @@ const Contact = () => {
             </motion.div>
 
             {/* Contact Form */}
-            <motion.div variants={itemVariants}>
-              <form
+            <motion.div variants={itemVariants} className="w-full">
+              <motion.form
                 onSubmit={handleSubmit}
-                className="bg-dark-card border border-accent-purple/20 rounded-lg p-8 space-y-6 glow-effect"
+                className="relative group"
+                whileInView={{ y: 0, opacity: 1 }}
               >
-                <div>
-                  <label className="block text-sm font-semibold text-dark-text mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-dark-bg border border-accent-purple/20 rounded-lg text-dark-text placeholder-dark-text/40 focus:outline-none focus:border-accent-purple transition-colors"
-                    placeholder="Your name"
-                  />
-                </div>
+                {/* Glassmorphism background with glow */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-accent-purple/40 via-accent-pink/20 to-accent-purple/40 rounded-2xl opacity-0 group-hover:opacity-40 blur-xl transition-all duration-500"></div>
 
-                <div>
-                  <label className="block text-sm font-semibold text-dark-text mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-dark-bg border border-accent-purple/20 rounded-lg text-dark-text placeholder-dark-text/40 focus:outline-none focus:border-accent-purple transition-colors"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
+                <div className="relative bg-dark-card/80 backdrop-blur-md border border-accent-purple/30 rounded-2xl p-8 sm:p-10 shadow-2xl shadow-accent-purple/10 space-y-7">
+                  {/* Name Field */}
+                  <div className="space-y-3">
+                    <label className="block text-sm font-semibold text-dark-text uppercase tracking-wider">
+                      Full Name
+                    </label>
+                    <motion.input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      whileFocus={{ scale: 1.01 }}
+                      className="w-full px-5 py-3.5 bg-dark-bg/60 border border-accent-purple/20 rounded-xl text-dark-text placeholder-dark-text/40 focus:outline-none focus:border-accent-purple focus:bg-dark-bg/80 focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 placeholder-shown:text-dark-text/50"
+                      placeholder="Your full name"
+                    />
+                  </div>
 
-                <div>
-                  <label className="block text-sm font-semibold text-dark-text mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                    className="w-full px-4 py-3 bg-dark-bg border border-accent-purple/20 rounded-lg text-dark-text placeholder-dark-text/40 focus:outline-none focus:border-accent-purple transition-colors resize-none"
-                    placeholder="Your message here..."
-                  />
-                </div>
+                  {/* Email Field */}
+                  <div className="space-y-3">
+                    <label className="block text-sm font-semibold text-dark-text uppercase tracking-wider">
+                      Email Address
+                    </label>
+                    <motion.input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      whileFocus={{ scale: 1.01 }}
+                      className="w-full px-5 py-3.5 bg-dark-bg/60 border border-accent-purple/20 rounded-xl text-dark-text placeholder-dark-text/40 focus:outline-none focus:border-accent-purple focus:bg-dark-bg/80 focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 placeholder-shown:text-dark-text/50"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
 
-                <motion.button
-                  type="submit"
-                  disabled={loading}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-accent-purple to-accent-pink rounded-lg font-semibold text-white flex items-center justify-center gap-2 hover:shadow-glow-purple transition-all disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  {loading ? (
-                    <span>Sending...</span>
-                  ) : (
-                    <>
-                      <Send size={20} />
-                      Send Message
-                    </>
-                  )}
-                </motion.button>
-              </form>
+                  {/* Message Field */}
+                  <div className="space-y-3">
+                    <label className="block text-sm font-semibold text-dark-text uppercase tracking-wider">
+                      Message
+                    </label>
+                    <motion.textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows="5"
+                      whileFocus={{ scale: 1.01 }}
+                      className="w-full px-5 py-3.5 bg-dark-bg/60 border border-accent-purple/20 rounded-xl text-dark-text placeholder-dark-text/40 focus:outline-none focus:border-accent-purple focus:bg-dark-bg/80 focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 resize-none placeholder-shown:text-dark-text/50"
+                      placeholder="Tell me about your project or idea..."
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <motion.button
+                    type="submit"
+                    disabled={loading}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-8 py-4 bg-gradient-to-r from-accent-purple via-accent-pink to-accent-purple rounded-xl font-bold text-white text-lg flex items-center justify-center gap-3 hover:shadow-xl hover:shadow-accent-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none overflow-hidden relative group/btn"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent-pink to-accent-purple opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                    <span className="relative z-10 flex items-center gap-2">
+                      {loading ? (
+                        <>
+                          <motion.span
+                            animate={{ rotate: 360 }}
+                            transition={{ repeat: Infinity, duration: 1 }}
+                            className="inline-block"
+                          >
+                            <Send size={20} />
+                          </motion.span>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message
+                          <motion.span
+                            animate={{ x: 0 }}
+                            whileHover={{ x: 5 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <ArrowRight size={20} />
+                          </motion.span>
+                        </>
+                      )}
+                    </span>
+                  </motion.button>
+
+                  {/* Help text */}
+                  <p className="text-center text-xs text-dark-text/50 pt-2">
+                    I'll get back to you as soon as possible
+                  </p>
+                </div>
+              </motion.form>
             </motion.div>
           </motion.div>
         </motion.div>

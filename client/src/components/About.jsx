@@ -67,9 +67,8 @@ const About = () => {
           >
             <p className="text-lg text-dark-text/80">
               I'm a passionate Full Stack Developer with a strong foundation in
-              the MERN stack from RNW (React Native Web) development course. My
-              journey into tech has been driven by a deep love for creating
-              beautiful, functional web experiences.
+              the MERN stack.. My journey into tech has been driven by a deep
+              love for creating beautiful, functional web experiences.
             </p>
             <p className="text-lg text-dark-text/80">
               With expertise in both frontend and backend technologies, I bring
