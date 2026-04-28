@@ -39,7 +39,7 @@ const Hero = () => {
           {/* Text Content */}
           <div className="space-y-6">
             <motion.div variants={itemVariants}>
-              <div className="inline-block px-4 py-2 bg-gradient-to-r from-accent-purple/20 to-accent-pink/20 border border-accent-purple/30 rounded-full mb-4">
+              <div className="inline-block px-4 py-2 bg-gradient-to-r from-accent-purple/20 to-accent-pink/20 border border-accent-purple/30 rounded-full mb-4 text-text-primary">
                 <span className="text-accent-purple font-semibold text-sm">
                   👋 Full Stack Developer
                 </span>
@@ -70,7 +70,7 @@ const Hero = () => {
                 <motion.button
                   whileHover={{ scale: 1.05, x: 5 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-gradient-to-r from-accent-purple to-accent-pink rounded-lg font-semibold text-white flex items-center gap-2 hover:shadow-glow-purple transition-all"
+                  className="px-8 py-3 bg-gradient-to-r from-accent-purple to-accent-pink rounded-lg font-semibold text-primary flex items-center gap-2 hover:shadow-glow-purple transition-all"
                 >
                   Explore My Work
                   <ArrowRight size={20} />
@@ -108,7 +108,7 @@ const Hero = () => {
                 <div className="text-center">
                   <img
                     src="./src/assets/pro.jpg"
-                    className="text-sm text-dark-text/60"
+                    className="text-sm text-text-tertiary"
                     alt=""
                   />
                 </div>
@@ -137,7 +137,7 @@ const Hero = () => {
         transition={{ duration: 2, repeat: Infinity }}
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-xs text-dark-text/60">Scroll to explore</span>
+          <span className="text-accent-tertiary">Scroll to explore</span>
           <div className="w-6 h-10 border-2 border-accent-purple/30 rounded-full flex justify-center p-2">
             <motion.div
               className="w-1 h-2 bg-accent-purple rounded-full"

@@ -296,7 +296,7 @@ const Contact = () => {
                     disabled={loading}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-8 py-4 bg-gradient-to-r from-accent-purple via-accent-pink to-accent-purple rounded-xl font-bold text-white text-lg flex items-center justify-center gap-3 hover:shadow-xl hover:shadow-accent-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none overflow-hidden relative group/btn"
+                    className="w-full px-8 py-4 bg-gradient-to-r from-accent-purple via-accent-pink to-accent-purple rounded-xl font-bold text-primary text-lg flex items-center justify-center gap-3 hover:shadow-xl hover:shadow-accent-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none overflow-hidden relative group/btn"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-accent-pink to-accent-purple opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                     <span className="relative z-10 flex items-center gap-2">
@@ -327,7 +327,7 @@ const Contact = () => {
                   </motion.button>
 
                   {/* Help text */}
-                  <p className="text-center text-xs text-dark-text/50 pt-2">
+                  <p className="text-center text-xs text-text-tertiary pt-2">
                     I'll get back to you as soon as possible
                   </p>
                 </div>

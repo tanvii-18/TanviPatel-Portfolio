@@ -32,6 +32,17 @@
 
   --accent-lavender: #c084fc;
 
+  /* Gradients - Dark Mode (Vibrant) */
+  --gradient-primary: linear-gradient(135deg, #667eea, #f093fb);
+  --gradient-secondary: linear-gradient(180deg, #667eea, #764ba2);
+  --gradient-card: linear-gradient(to br, #667eea 0%, #f093fb 100%);
+  --gradient-button: linear-gradient(to r, #667eea, #f093fb);
+  --gradient-hover: linear-gradient(135deg, #8b9eff, #f5a8ff);
+
+  /* Particle Colors - Dark Mode */
+  --particle-color: rgba(102, 126, 234, 0.7);
+  --particle-line: rgba(102, 126, 234, 0.4);
+
   --shadow-sm: 0 2px 8px rgba(102, 126, 234, 0.05);
   --shadow-md: 0 4px 16px rgba(102, 126, 234, 0.1);
   --shadow-lg: 0 8px 32px rgba(102, 126, 234, 0.15);
@@ -51,9 +62,9 @@ body.light-theme {
   --bg-input: #e8ecf5;
   --bg-hover: #e0e5f0;
 
-  --text-primary: #1a1a2e;
-  --text-secondary: #4a4a6a;
-  --text-tertiary: #8a8aab;
+  --text-primary: #0d0d1f;
+  --text-secondary: #3d3d5c;
+  --text-tertiary: #6d6d8f;
 
   --border-color: #d0d5e8;
   --border-light: #e0e5f0;
@@ -71,6 +82,17 @@ body.light-theme {
   --accent-pink-hover: rgba(214, 111, 224, 0.15);
 
   --accent-lavender: #b670e8;
+
+  /* Gradients - Light Mode (Softer) */
+  --gradient-primary: linear-gradient(135deg, #667eea, #d66fe0);
+  --gradient-secondary: linear-gradient(180deg, #667eea, #8b9eff);
+  --gradient-card: linear-gradient(to br, #667eea 0%, #d66fe0 100%);
+  --gradient-button: linear-gradient(to r, #667eea, #d66fe0);
+  --gradient-hover: linear-gradient(135deg, #8b9eff, #e89ff0);
+
+  /* Particle Colors - Light Mode (Darker for visibility) */
+  --particle-color: rgba(45, 52, 120, 0.6);
+  --particle-line: rgba(45, 52, 120, 0.35);
 
   --shadow-sm: 0 2px 8px rgba(102, 126, 234, 0.08);
   --shadow-md: 0 4px 16px rgba(102, 126, 234, 0.12);
@@ -230,7 +252,7 @@ body.light-theme .particle::before {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -34,6 +34,11 @@ export default {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-secondary": "var(--gradient-secondary)",
+        "gradient-card": "var(--gradient-card)",
+        "gradient-button": "var(--gradient-button)",
+        "gradient-hover": "var(--gradient-hover)",
       },
       boxShadow: {
         "glow-purple": "var(--shadow-glow)",

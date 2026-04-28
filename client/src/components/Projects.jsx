@@ -151,7 +151,7 @@ const Projects = () => {
                           href={project.liveDemo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 px-4 py-2 bg-gradient-to-r from-accent-purple to-accent-pink rounded-lg font-semibold text-white text-center flex items-center justify-center gap-2 hover:shadow-glow-purple transition-all"
+                          className="flex-1 px-4 py-2 bg-gradient-to-r from-accent-purple to-accent-pink rounded-lg font-semibold text-primary text-center flex items-center justify-center gap-2 hover:shadow-glow-purple transition-all"
                         >
                           <ExternalLink size={16} />
                           Live Demo
