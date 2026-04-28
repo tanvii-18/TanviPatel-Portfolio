@@ -54,7 +54,7 @@ const Hero = () => {
             </motion.h1>
 
             <motion.p
-              className="text-lg sm:text-xl text-dark-text/80 max-w-lg"
+              className="text-lg sm:text-xl text-text-secondary max-w-lg"
               variants={itemVariants}
             >
               Turning ideas into aesthetic, functional web experiences with a

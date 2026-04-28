@@ -119,7 +119,7 @@ const Contact = () => {
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
               Let's <span className="gradient-text">Connect</span>
             </h2>
-            <p className="text-lg sm:text-xl text-dark-text/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
               Have a project in mind or just want to chat? I'd love to hear from
               you. Get in touch and let's create something amazing together!
             </p>
@@ -140,7 +140,7 @@ const Contact = () => {
                 <h3 className="text-3xl font-bold bg-gradient-to-r from-accent-purple to-accent-pink bg-clip-text text-transparent">
                   Get In Touch
                 </h3>
-                <p className="text-dark-text/70 leading-relaxed">
+                <p className="text-text-secondary leading-relaxed">
                   Reach out through any of these channels or fill the contact
                   form.
                 </p>
@@ -164,10 +164,10 @@ const Contact = () => {
                     />
                   </motion.div>
                   <div className="min-w-0 pt-2">
-                    <h4 className="text-sm font-semibold text-dark-text/60 uppercase tracking-wider mb-1">
+                    <h4 className="text-sm font-semibold text-text-tertiary uppercase tracking-wider mb-1">
                       Email
                     </h4>
-                    <p className="text-lg text-dark-text font-medium group-hover:text-accent-purple transition-colors break-all">
+                    <p className="text-lg text-text-primary font-medium group-hover:text-accent-purple transition-colors break-all">
                       tanvii.tech@gmail.com
                     </p>
                   </div>
@@ -188,17 +188,19 @@ const Contact = () => {
                     />
                   </motion.div>
                   <div className="pt-2">
-                    <h4 className="text-sm font-semibold text-dark-text/60 uppercase tracking-wider mb-1">
+                    <h4 className="text-sm font-semibold text-text-tertiary uppercase tracking-wider mb-1">
                       Location
                     </h4>
-                    <p className="text-lg text-dark-text font-medium">India</p>
+                    <p className="text-lg text-text-primary font-medium">
+                      India
+                    </p>
                   </div>
                 </motion.div>
               </div>
 
               {/* Social Links */}
               <div className="pt-8 border-t border-accent-purple/10">
-                <h4 className="text-sm font-semibold text-dark-text/60 uppercase tracking-wider mb-6">
+                <h4 className="text-sm font-semibold text-text-tertiary uppercase tracking-wider mb-6">
                   Follow Me
                 </h4>
                 <div className="flex gap-4 flex-wrap">
@@ -210,7 +212,7 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.15, y: -8 }}
                       whileTap={{ scale: 0.9 }}
-                      className="p-3.5 bg-gradient-to-br from-dark-card to-dark-bg border border-accent-purple/30 rounded-xl text-accent-purple hover:border-accent-purple hover:text-accent-pink hover:shadow-lg hover:shadow-accent-purple/20 transition-all duration-300"
+                      className="p-3.5 bg-gradient-to-br from-card to-primary border border-accent-purple/30 rounded-xl text-accent-purple hover:border-accent-purple hover:text-accent-pink hover:shadow-lg hover:shadow-accent-purple/20 transition-all duration-300"
                       title={social.label}
                     >
                       <motion.div
@@ -236,10 +238,10 @@ const Contact = () => {
                 {/* Glassmorphism background with glow */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-accent-purple/40 via-accent-pink/20 to-accent-purple/40 rounded-2xl opacity-0 group-hover:opacity-40 blur-xl transition-all duration-500"></div>
 
-                <div className="relative bg-dark-card/80 backdrop-blur-md border border-accent-purple/30 rounded-2xl p-8 sm:p-10 shadow-2xl shadow-accent-purple/10 space-y-7">
+                <div className="relative bg-card/80 backdrop-blur-md border border-accent-purple/30 rounded-2xl p-8 sm:p-10 shadow-2xl shadow-accent-purple/10 space-y-7">
                   {/* Name Field */}
                   <div className="space-y-3">
-                    <label className="block text-sm font-semibold text-dark-text uppercase tracking-wider">
+                    <label className="block text-sm font-semibold text-text-primary uppercase tracking-wider">
                       Full Name
                     </label>
                     <motion.input
@@ -249,14 +251,14 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       whileFocus={{ scale: 1.01 }}
-                      className="w-full px-5 py-3.5 bg-dark-bg/60 border border-accent-purple/20 rounded-xl text-dark-text placeholder-dark-text/40 focus:outline-none focus:border-accent-purple focus:bg-dark-bg/80 focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 placeholder-shown:text-dark-text/50"
+                      className="w-full px-5 py-3.5 bg-input/60 border border-accent-purple/20 rounded-xl text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-purple focus:bg-input/80 focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 placeholder-shown:text-text-secondary/50"
                       placeholder="Your full name"
                     />
                   </div>
 
                   {/* Email Field */}
                   <div className="space-y-3">
-                    <label className="block text-sm font-semibold text-dark-text uppercase tracking-wider">
+                    <label className="block text-sm font-semibold text-text-primary uppercase tracking-wider">
                       Email Address
                     </label>
                     <motion.input
@@ -266,14 +268,14 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       whileFocus={{ scale: 1.01 }}
-                      className="w-full px-5 py-3.5 bg-dark-bg/60 border border-accent-purple/20 rounded-xl text-dark-text placeholder-dark-text/40 focus:outline-none focus:border-accent-purple focus:bg-dark-bg/80 focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 placeholder-shown:text-dark-text/50"
+                      className="w-full px-5 py-3.5 bg-input/60 border border-accent-purple/20 rounded-xl text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-purple focus:bg-input/80 focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 placeholder-shown:text-text-secondary/50"
                       placeholder="your.email@example.com"
                     />
                   </div>
 
                   {/* Message Field */}
                   <div className="space-y-3">
-                    <label className="block text-sm font-semibold text-dark-text uppercase tracking-wider">
+                    <label className="block text-sm font-semibold text-text-primary uppercase tracking-wider">
                       Message
                     </label>
                     <motion.textarea
@@ -283,7 +285,7 @@ const Contact = () => {
                       required
                       rows="5"
                       whileFocus={{ scale: 1.01 }}
-                      className="w-full px-5 py-3.5 bg-dark-bg/60 border border-accent-purple/20 rounded-xl text-dark-text placeholder-dark-text/40 focus:outline-none focus:border-accent-purple focus:bg-dark-bg/80 focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 resize-none placeholder-shown:text-dark-text/50"
+                      className="w-full px-5 py-3.5 bg-input/60 border border-accent-purple/20 rounded-xl text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-purple focus:bg-input/80 focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 resize-none placeholder-shown:text-text-secondary/50"
                       placeholder="Tell me about your project or idea..."
                     />
                   </div>

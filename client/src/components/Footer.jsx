@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-accent-purple/20 bg-dark-bg/50 backdrop-blur-lg py-8">
+    <footer className="border-t border-accent-purple/20 bg-card/50 backdrop-blur-lg py-8 transition-colors">
       <div className="content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="flex flex-col md:flex-row justify-between items-center gap-6"
@@ -17,17 +17,17 @@ const Footer = () => {
             <h3 className="text-xl font-bold gradient-text mb-2">
               Crafted By Tanvi
             </h3>
-            <p className="text-dark-text/60 text-sm">
+            <p className="text-text-secondary text-sm">
               Building beautiful and functional web experiences
             </p>
           </div>
 
-          <div className="text-center text-sm text-dark-text/60">
+          <div className="text-center text-sm text-text-secondary">
             <p>© {currentYear} Tanvi Patel. All rights reserved.</p>
           </div>
 
           <div className="text-center md:text-right">
-            <p className="text-dark-text/60 text-sm">
+            <p className="text-text-secondary text-sm">
               Made with 💜 using MERN Stack
             </p>
           </div>

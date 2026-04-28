@@ -117,7 +117,7 @@ const Projects = () => {
                 >
                   <motion.div
                     whileHover={{ y: -10 }}
-                    className="h-full bg-dark-card border border-accent-purple/20 rounded-lg overflow-hidden glow-effect hover:border-accent-purple/50 transition-all flex flex-col"
+                    className="h-full bg-card border border-accent-purple/20 rounded-lg overflow-hidden glow-effect hover:border-accent-purple/50 transition-all flex flex-col"
                   >
                     {/* Project Image */}
                     <div className="h-48 bg-gradient-to-br from-accent-purple/20 to-accent-pink/20 border-b border-accent-purple/20 flex items-center justify-center text-6xl hover:scale-105 transition-transform">
@@ -126,10 +126,10 @@ const Projects = () => {
 
                     {/* Content */}
                     <div className="p-6 flex-grow flex flex-col">
-                      <h3 className="text-xl font-bold text-dark-text mb-2">
+                      <h3 className="text-xl font-bold text-text-primary mb-2">
                         {project.title}
                       </h3>
-                      <p className="text-dark-text/70 mb-4 flex-grow">
+                      <p className="text-text-secondary mb-4 flex-grow">
                         {project.description}
                       </p>
 

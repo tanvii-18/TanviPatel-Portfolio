@@ -65,18 +65,18 @@ const About = () => {
             className="max-w-3xl mx-auto space-y-4"
             variants={itemVariants}
           >
-            <p className="text-lg text-dark-text/80">
+            <p className="text-lg text-text-secondary">
               I'm a passionate Full Stack Developer with a strong foundation in
               the MERN stack.. My journey into tech has been driven by a deep
               love for creating beautiful, functional web experiences.
             </p>
-            <p className="text-lg text-dark-text/80">
+            <p className="text-lg text-text-secondary">
               With expertise in both frontend and backend technologies, I bring
               a unique perspective combining UI/UX sensibilities with robust
               backend architecture. I'm deeply committed to continuous learning
               and staying at the forefront of web development trends.
             </p>
-            <p className="text-lg text-dark-text/80">
+            <p className="text-lg text-text-secondary">
               Beyond coding, I value strong communication, adaptability, and
               consistency. These soft skills, combined with my technical
               prowess, enable me to collaborate effectively and deliver
@@ -94,15 +94,15 @@ const About = () => {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ y: -10 }}
-                className="p-6 bg-dark-card border border-accent-purple/20 rounded-lg hover:border-accent-purple/50 transition-all glow-effect group"
+                className="p-6 bg-card border border-accent-purple/20 rounded-lg hover:border-accent-purple/50 transition-all glow-effect group"
               >
                 <div className="text-accent-purple mb-4 group-hover:text-accent-pink transition-colors">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-dark-text">
+                <h3 className="text-xl font-semibold mb-2 text-text-primary">
                   {feature.title}
                 </h3>
-                <p className="text-dark-text/70">{feature.description}</p>
+                <p className="text-text-secondary">{feature.description}</p>
               </motion.div>
             ))}
           </motion.div>

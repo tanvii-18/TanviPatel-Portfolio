@@ -113,12 +113,12 @@ const Skills = () => {
                       <motion.div
                         key={skillIndex}
                         whileHover={{ y: -10, scale: 1.05 }}
-                        className="flex-shrink-0 w-32 h-36 bg-gradient-to-br from-dark-card to-dark-card/50 border border-accent-purple/20 rounded-lg p-4 flex flex-col items-center justify-center gap-3 glow-effect group hover:border-accent-purple/50 transition-all cursor-pointer"
+                        className="flex-shrink-0 w-32 h-36 bg-gradient-to-br from-card to-card/50 border border-accent-purple/20 rounded-lg p-4 flex flex-col items-center justify-center gap-3 glow-effect group hover:border-accent-purple/50 transition-all cursor-pointer"
                       >
                         <div className="text-accent-purple group-hover:text-accent-pink transition-colors">
                           {skill.icon}
                         </div>
-                        <p className="text-sm font-semibold text-center text-dark-text">
+                        <p className="text-sm font-semibold text-center text-text-primary">
                           {skill.name}
                         </p>
                       </motion.div>

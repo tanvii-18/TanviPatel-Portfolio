@@ -38,10 +38,8 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
   return (
     <motion.nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-dark-bg/80 backdrop-blur-lg shadow-lg"
-          : "bg-transparent"
+      className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
+        isScrolled ? "bg-card/80 backdrop-blur-lg shadow-md" : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -75,7 +73,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                   spy
                   smooth
                   duration={500}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-dark-text hover:text-accent-purple transition-all cursor-pointer group relative"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-text-primary hover:text-accent-purple transition-all cursor-pointer group relative"
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-accent-purple to-accent-pink group-hover:w-full transition-all duration-300"></span>
@@ -90,7 +88,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className="p-2 rounded-lg bg-dark-card hover:bg-accent-purple/20 transition-colors"
+              className="p-2 rounded-lg bg-card hover:bg-accent-purple/20 transition-colors"
               aria-label="Toggle theme"
             >
               {isDarkMode ? (
@@ -104,7 +102,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg bg-dark-card hover:bg-accent-purple/20"
+              className="md:hidden p-2 rounded-lg bg-card hover:bg-accent-purple/20"
             >
               {isOpen ? (
                 <X size={24} className="text-accent-purple" />
@@ -133,7 +131,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                 spy
                 smooth
                 duration={500}
-                className="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-dark-card hover:text-accent-purple transition-all cursor-pointer"
+                className="block px-3 py-2 rounded-md text-base font-medium text-text-primary hover:bg-card hover:text-accent-purple transition-all cursor-pointer"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
