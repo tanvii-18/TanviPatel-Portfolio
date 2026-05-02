@@ -42,7 +42,7 @@ function App() {
   };
 
   return (
-    <div className="bg-primary text-text-primary min-h-screen">
+    <div className="relative text-text-primary min-h-screen">
       <ParticlesBackground isDarkMode={isDarkMode} />
 
       <div className="relative z-10">

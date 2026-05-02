@@ -11,6 +11,23 @@
   --bg-input: #151d37;
   --bg-hover: #242d47;
 
+  /* Dark Theme - Premium Background Layers */
+  --bg-gradient-1: radial-gradient(
+    ellipse 60% 50% at 20% 10%,
+    rgba(102, 126, 234, 0.15) 0%,
+    transparent 50%
+  );
+  --bg-gradient-2: radial-gradient(
+    ellipse 50% 60% at 80% 90%,
+    rgba(240, 147, 251, 0.12) 0%,
+    transparent 50%
+  );
+  --bg-gradient-3: radial-gradient(
+    ellipse 40% 40% at 50% 50%,
+    rgba(118, 75, 162, 0.08) 0%,
+    transparent 50%
+  );
+
   --text-primary: #e0e0ff;
   --text-secondary: #a8a8d1;
   --text-tertiary: #7a7aad;
@@ -39,9 +56,9 @@
   --gradient-button: linear-gradient(to r, #667eea, #f093fb);
   --gradient-hover: linear-gradient(135deg, #8b9eff, #f5a8ff);
 
-  /* Particle Colors - Dark Mode */
-  --particle-color: rgba(102, 126, 234, 0.7);
-  --particle-line: rgba(102, 126, 234, 0.4);
+  /* Particle Colors - Dark Mode (Soft White) */
+  --particle-color: rgba(200, 210, 255, 0.6);
+  --particle-line: rgba(180, 195, 255, 0.4);
 
   --shadow-sm: 0 2px 8px rgba(102, 126, 234, 0.05);
   --shadow-md: 0 4px 16px rgba(102, 126, 234, 0.1);
@@ -56,11 +73,28 @@
 
 /* Light Theme */
 body.light-theme {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fb;
-  --bg-card: #f0f2f7;
-  --bg-input: #e8ecf5;
-  --bg-hover: #e0e5f0;
+  --bg-primary: #fafbfc;
+  --bg-secondary: #f0f2f8;
+  --bg-card: #e8ecf5;
+  --bg-input: #e0e5f0;
+  --bg-hover: #d8dde8;
+
+  /* Light Theme - Premium Background Layers (Subtle) */
+  --bg-gradient-1: radial-gradient(
+    ellipse 60% 50% at 20% 10%,
+    rgba(102, 126, 234, 0.06) 0%,
+    transparent 50%
+  );
+  --bg-gradient-2: radial-gradient(
+    ellipse 50% 60% at 80% 90%,
+    rgba(214, 111, 224, 0.04) 0%,
+    transparent 50%
+  );
+  --bg-gradient-3: radial-gradient(
+    ellipse 40% 40% at 50% 50%,
+    rgba(139, 158, 255, 0.03) 0%,
+    transparent 50%
+  );
 
   --text-primary: #0d0d1f;
   --text-secondary: #3d3d5c;
@@ -90,9 +124,9 @@ body.light-theme {
   --gradient-button: linear-gradient(to r, #667eea, #d66fe0);
   --gradient-hover: linear-gradient(135deg, #8b9eff, #e89ff0);
 
-  /* Particle Colors - Light Mode (Darker for visibility) */
-  --particle-color: rgba(45, 52, 120, 0.6);
-  --particle-line: rgba(45, 52, 120, 0.35);
+  /* Particle Colors - Light Mode (Faint, subtle background) */
+  --particle-color: rgba(150, 160, 200, 0.2);
+  --particle-line: rgba(140, 150, 190, 0.12);
 
   --shadow-sm: 0 2px 8px rgba(102, 126, 234, 0.08);
   --shadow-md: 0 4px 16px rgba(102, 126, 234, 0.12);
@@ -108,18 +142,83 @@ body.light-theme {
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--bg-primary);
+  background-image:
+    var(--bg-gradient-1), var(--bg-gradient-2), var(--bg-gradient-3);
+  background-attachment: fixed;
+  background-position:
+    0% 0%,
+    100% 100%,
+    50% 50%;
+  background-size:
+    200% 200%,
+    200% 200%,
+    150% 150%;
   color: var(--text-primary);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
   transition:
     background-color var(--transition-normal),
     color var(--transition-normal);
+}
+
+/* Mobile Background Adjustment - better performance on smaller devices */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-size:
+      250% 250%,
+      250% 250%,
+      200% 200%;
+  }
+}
+
+/* Tablet Optimization */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    background-size:
+      190% 190%,
+      190% 190%,
+      160% 160%;
+  }
+}
+
+/* Large Screen Optimization */
+@media (min-width: 1025px) and (max-width: 1920px) {
+  body {
+    background-size:
+      180% 180%,
+      180% 180%,
+      140% 140%;
+  }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1921px) {
+  body {
+    background-size:
+      160% 160%,
+      160% 160%,
+      130% 130%;
+  }
+}
+
+/* ===================== BACKGROUND & Z-INDEX LAYERING ===================== */
+/* Content wrapper should be above particles */
+.content {
+  position: relative;
+  z-index: 10;
 }
 
 /* Particles Background */
