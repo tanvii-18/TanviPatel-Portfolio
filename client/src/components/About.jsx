@@ -27,7 +27,7 @@ const About = () => {
       icon: <Zap size={32} />,
       title: "Development Approach",
       description:
-        "Building scalable, maintainable solutions with modern technologies",
+        "Building scalable, maintainable solutions with modern technologies.",
     },
     {
       icon: <Lightbulb size={32} />,
