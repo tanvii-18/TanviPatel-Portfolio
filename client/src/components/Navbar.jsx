@@ -54,7 +54,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             whileTap={{ scale: 0.95 }}
           >
             <a href="#home" className="text-2xl font-bold gradient-text">
-              tanvi.dev
+              tanvi's Portfolio
             </a>
           </motion.div>
 

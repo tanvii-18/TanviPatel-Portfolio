@@ -10,28 +10,6 @@ const ParticlesBackground = ({ isDarkMode }) => {
     const ctx = canvas.getContext("2d");
     let animationId;
 
-    // Get CSS variables based on theme
-    const getComputedColors = () => {
-      const root = document.documentElement;
-      const computedStyle = getComputedStyle(root);
-
-      return {
-        particleColor: computedStyle
-          .getPropertyValue("--particle-color")
-          .trim(),
-        particleLine: computedStyle.getPropertyValue("--particle-line").trim(),
-        bgStart: isDarkMode
-          ? "rgba(102, 126, 234, 0.1)"
-          : "rgba(200, 220, 255, 0.15)",
-        bgMid: isDarkMode
-          ? "rgba(118, 75, 162, 0.05)"
-          : "rgba(180, 200, 240, 0.08)",
-        bgEnd: isDarkMode ? "rgba(10, 14, 39, 0)" : "rgba(255, 255, 255, 0)",
-      };
-    };
-
-    let colors = getComputedColors();
-
     // Set canvas size
     const setCanvasSize = () => {
       canvas.width = window.innerWidth;
@@ -40,101 +18,75 @@ const ParticlesBackground = ({ isDarkMode }) => {
 
     setCanvasSize();
 
-    // Particle class
-    class Particle {
+    // Minimal floating orbs effect
+    class FloatingOrb {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
-        // Adjust opacity range based on theme - light mode is much fainter
-        if (isDarkMode) {
-          this.opacity = Math.random() * 0.4 + 0.3; // Dark: 0.3-0.7
-        } else {
-          this.opacity = Math.random() * 0.15 + 0.05; // Light: 0.05-0.2 (very subtle)
-        }
+        this.size = Math.random() * 60 + 40;
+        this.speedX = (Math.random() - 0.5) * 0.15;
+        this.speedY = (Math.random() - 0.5) * 0.15;
+        this.opacity = Math.random() * 0.04 + 0.01;
+        this.color = isDarkMode
+          ? `rgba(88, 166, 255, ${this.opacity})`
+          : `rgba(9, 105, 218, ${this.opacity})`;
       }
 
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        if (this.x > canvas.width) this.x = 0;
-        if (this.x < 0) this.x = canvas.width;
-        if (this.y > canvas.height) this.y = 0;
-        if (this.y < 0) this.y = canvas.height;
+        // Wrap around edges
+        if (this.x - this.size > canvas.width) this.x = -this.size;
+        if (this.x + this.size < 0) this.x = canvas.width + this.size;
+        if (this.y - this.size > canvas.height) this.y = -this.size;
+        if (this.y + this.size < 0) this.y = canvas.height + this.size;
       }
 
       draw() {
-        ctx.fillStyle = colors.particleColor.replace(")", `, ${this.opacity})`);
+        ctx.fillStyle = this.color;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
 
-        // Glow effect
-        ctx.strokeStyle = colors.particleLine.replace(
-          ")",
-          `, ${this.opacity * 0.5})`,
+        // Soft blur effect using gradient
+        const gradient = ctx.createRadialGradient(
+          this.x,
+          this.y,
+          0,
+          this.x,
+          this.y,
+          this.size,
         );
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
+        gradient.addColorStop(
+          0,
+          isDarkMode
+            ? `rgba(88, 166, 255, ${this.opacity * 0.6})`
+            : `rgba(9, 105, 218, ${this.opacity * 0.6})`,
+        );
+        gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+        ctx.fillStyle = gradient;
+        ctx.fill();
       }
     }
 
-    // Create particles
-    const particlesArray = [];
-    const particleCount = Math.floor(window.innerWidth / 50);
+    // Create floating orbs
+    const orbsArray = [];
+    const orbCount = 3; // Very minimal - just 3 orbs
 
-    for (let i = 0; i < particleCount; i++) {
-      particlesArray.push(new Particle());
+    for (let i = 0; i < orbCount; i++) {
+      orbsArray.push(new FloatingOrb());
     }
 
     // Animation loop
     const animate = () => {
+      // Clear with fade effect for smooth trails
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw nebula-like background
-      const gradient = ctx.createRadialGradient(
-        canvas.width / 2,
-        canvas.height / 2,
-        0,
-        canvas.width / 2,
-        canvas.height / 2,
-        canvas.width,
-      );
-      gradient.addColorStop(0, colors.bgStart);
-      gradient.addColorStop(0.5, colors.bgMid);
-      gradient.addColorStop(1, colors.bgEnd);
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Update and draw particles
-      for (let particle of particlesArray) {
-        particle.update();
-        particle.draw();
-      }
-
-      // Draw connecting lines
-      for (let i = 0; i < particlesArray.length; i++) {
-        for (let j = i + 1; j < particlesArray.length; j++) {
-          const dx = particlesArray[i].x - particlesArray[j].x;
-          const dy = particlesArray[i].y - particlesArray[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 150) {
-            const lineOpacity = 0.2 * (1 - distance / 150);
-            ctx.strokeStyle = colors.particleLine.replace(
-              ")",
-              `, ${lineOpacity})`,
-            );
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-            ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
-            ctx.stroke();
-          }
-        }
+      // Update and draw all orbs
+      for (let i = 0; i < orbsArray.length; i++) {
+        orbsArray[i].update();
+        orbsArray[i].draw();
       }
 
       animationId = requestAnimationFrame(animate);
@@ -155,17 +107,11 @@ const ParticlesBackground = ({ isDarkMode }) => {
     };
   }, [isDarkMode]);
 
-  const bgGradient = isDarkMode
-    ? "linear-gradient(135deg, #0a0e27 0%, #1a0f3a 100%)"
-    : "linear-gradient(135deg, #ffffff 0%, #f5f7fc 100%)";
-
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 transition-all duration-300"
-      style={{
-        background: bgGradient,
-      }}
+      className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"
+      style={{ filter: "blur(80px)" }}
     />
   );
 };

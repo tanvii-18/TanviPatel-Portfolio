@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import MusicPlayerImg from "../assets/MusicPlayer.png";
+import EcomImg from "../assets/Ecom.jpg";
+import WriteHubImg from "../assets/writehub.png";
 
 const Projects = () => {
   const [showMore, setShowMore] = useState(false);
@@ -9,58 +12,60 @@ const Projects = () => {
   const allProjects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      image: "🛍️",
-      description: "Full-stack e-commerce solution with payment integration",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveDemo: "#",
+      title: "Music Player",
+      image: MusicPlayerImg,
+      description: "A modern web-based music player built with React.",
+      tags: ["React", "HTML5", "CSS3", "React-Router-dom"],
+      // liveDemo: "#",
       sourceCode: "#",
     },
     {
       id: 2,
-      title: "Task Management App",
-      image: "✓",
-      description: "Real-time collaborative task management with Websockets",
-      tags: ["React", "Express", "PostgreSQL", "Socket.io"],
-      liveDemo: "#",
+      title: "E-Commerce Website",
+      image: EcomImg,
+      description:
+        "This is a simple e-commerce backend built with Node.js, Express, MongoDB, and Mongoose.",
+      tags: ["Node.js", "Express", "MongoDB", "Mongoose"],
+      // liveDemo: "#",
       sourceCode: "#",
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      image: "🌤️",
-      description: "Interactive weather app with geolocation and forecasts",
-      tags: ["React", "API Integration", "Tailwind CSS"],
-      liveDemo: "#",
+      title: "WriteHub – Blog Management App",
+      image: WriteHubImg,
+      description:
+        "WriteHub is a full-stack blog application built to help users write, publish, and manage blogs with secure authentication.",
+      tags: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "JWT"],
+      // liveDemo: "#",
       sourceCode: "#",
     },
-    {
-      id: 4,
-      title: "Blog Platform",
-      image: "📝",
-      description: "Feature-rich blogging platform with admin dashboard",
-      tags: ["MERN", "Authentication", "Rich Editor"],
-      liveDemo: "#",
-      sourceCode: "#",
-    },
-    {
-      id: 5,
-      title: "Chat Application",
-      image: "💬",
-      description: "Real-time messaging app with file sharing",
-      tags: ["React", "Node.js", "MongoDB", "Socket.io"],
-      liveDemo: "#",
-      sourceCode: "#",
-    },
-    {
-      id: 6,
-      title: "Analytics Dashboard",
-      image: "📊",
-      description: "Data visualization dashboard with interactive charts",
-      tags: ["React", "Chart.js", "Node.js", "MongoDB"],
-      liveDemo: "#",
-      sourceCode: "#",
-    },
+    // {
+    //   id: 4,
+    //   title: "Blog Platform",
+    //   image: "📝",
+    //   description: "Feature-rich blogging platform with admin dashboard",
+    //   tags: ["MERN", "Authentication", "Rich Editor"],
+    //   liveDemo: "#",
+    //   sourceCode: "#",
+    // },
+    // {
+    //   id: 5,
+    //   title: "Chat Application",
+    //   image: "💬",
+    //   description: "Real-time messaging app with file sharing",
+    //   tags: ["React", "Node.js", "MongoDB", "Socket.io"],
+    //   liveDemo: "#",
+    //   sourceCode: "#",
+    // },
+    // {
+    //   id: 6,
+    //   title: "Analytics Dashboard",
+    //   image: "📊",
+    //   description: "Data visualization dashboard with interactive charts",
+    //   tags: ["React", "Chart.js", "Node.js", "MongoDB"],
+    //   liveDemo: "#",
+    //   sourceCode: "#",
+    // },
   ];
 
   const visibleProjects = showMore ? allProjects : allProjects.slice(0, 3);
@@ -120,8 +125,16 @@ const Projects = () => {
                     className="h-full bg-card border border-accent-purple/20 rounded-lg overflow-hidden glow-effect hover:border-accent-purple/50 transition-all flex flex-col"
                   >
                     {/* Project Image */}
-                    <div className="h-48 bg-gradient-to-br from-accent-purple/20 to-accent-pink/20 border-b border-accent-purple/20 flex items-center justify-center text-6xl hover:scale-105 transition-transform">
-                      {project.image}
+                    <div className="h-48 bg-gradient-to-br from-accent-purple/20 to-accent-pink/20 border-b border-accent-purple/20 flex items-center justify-center overflow-hidden hover:scale-105 transition-transform">
+                      {project.image ? (
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <span className="text-6xl">📦</span>
+                      )}
                     </div>
 
                     {/* Content */}
