@@ -251,7 +251,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       whileFocus={{ scale: 1.01 }}
-                      className="w-full px-5 py-3.5 bg-input/60 border border-accent-purple/20 rounded-xl text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-purple focus:bg-input/80 focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 placeholder-shown:text-text-secondary/50"
+                      className="w-full px-5 py-3.5 bg-transparent border border-accent-purple/20 rounded-xl text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-purple focus:bg-transparent focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 placeholder-shown:text-text-secondary/50"
                       placeholder="Your full name"
                     />
                   </div>
@@ -268,7 +268,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       whileFocus={{ scale: 1.01 }}
-                      className="w-full px-5 py-3.5 bg-input/60 border border-accent-purple/20 rounded-xl text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-purple focus:bg-input/80 focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 placeholder-shown:text-text-secondary/50"
+                      className="w-full px-5 py-3.5 bg-transparent border border-accent-purple/20 rounded-xl text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-purple focus:bg-transparent focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 placeholder-shown:text-text-secondary/50"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -285,7 +285,7 @@ const Contact = () => {
                       required
                       rows="5"
                       whileFocus={{ scale: 1.01 }}
-                      className="w-full px-5 py-3.5 bg-input/60 border border-accent-purple/20 rounded-xl text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-purple focus:bg-input/80 focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 resize-none placeholder-shown:text-text-secondary/50"
+                      className="w-full px-5 py-3.5 bg-transparent border border-accent-purple/20 rounded-xl text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent-purple focus:bg-transparent focus:shadow-lg focus:shadow-accent-purple/20 transition-all duration-300 resize-none placeholder-shown:text-text-secondary/50"
                       placeholder="Tell me about your project or idea..."
                     />
                   </div>

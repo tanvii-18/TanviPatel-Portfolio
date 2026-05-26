@@ -17,7 +17,8 @@ const Projects = () => {
       description: "A modern web-based music player built with React.",
       tags: ["React", "HTML5", "CSS3", "React-Router-dom"],
       // liveDemo: "#",
-      sourceCode: "#",
+      sourceCode:
+        "https://github.com/tanvii-18/React.js/tree/main/Music-player",
     },
     {
       id: 2,
@@ -27,7 +28,8 @@ const Projects = () => {
         "This is a simple e-commerce backend built with Node.js, Express, MongoDB, and Mongoose.",
       tags: ["Node.js", "Express", "MongoDB", "Mongoose"],
       // liveDemo: "#",
-      sourceCode: "#",
+      sourceCode:
+        "https://github.com/tanvii-18/Node.js/tree/main/mongoDB/E-commerce_website",
     },
     {
       id: 3,
@@ -37,7 +39,7 @@ const Projects = () => {
         "WriteHub is a full-stack blog application built to help users write, publish, and manage blogs with secure authentication.",
       tags: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "JWT"],
       // liveDemo: "#",
-      sourceCode: "#",
+      sourceCode: "https://github.com/tanvii-18/WriteHub-Blog-Project",
     },
     // {
     //   id: 4,

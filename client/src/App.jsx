@@ -17,8 +17,8 @@ function App() {
     if (savedTheme) {
       return savedTheme === "dark";
     }
-    // Check system preference
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    // Default to dark mode
+    return true;
   });
 
   // Update theme on mount and whenever theme changes
